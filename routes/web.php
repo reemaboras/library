@@ -18,8 +18,12 @@ use App\Http\Controllers\BookController;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::resource('categories' , CategoryController::class)->except('destroy' , 'show');
-// Route::resource('books' , BookController::class)->only('index' , 'show');
+Route::resource('categories' , CategoryController::class)->except('destroy' , 'show');
+Route::resource('books' , BookController::class)->only('index' , 'show');
 
-Route::resource('categories' , CategoryController::class);
-Route::resource('books' , BookController::class);
+// Route::resource('categories' , CategoryController::class);
+// Route::resource('books' , BookController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

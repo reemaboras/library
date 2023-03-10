@@ -17,6 +17,9 @@ class BookFactory extends Factory
     public function definition()
     {
         return [
+            'ISBN'=>$this->faker->isbn13(),
+            'mor'
+
             //
         ];
     }
